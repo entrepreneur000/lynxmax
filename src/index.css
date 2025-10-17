@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 14% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 11%;
+
+    /* Neon blue primary */
+    --primary: 226 96% 71%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 226 96% 80%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 14% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 226 96% 71%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 226 96% 71%;
+
+    --radius: 0.75rem;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 220 13% 91% / 0.5;
+    
+    /* Shadows */
+    --shadow-glow: 226 96% 71% / 0.3;
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 226 96% 71%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 226 96% 80%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 226 96% 71%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 226 96% 71%;
+
+    /* Glassmorphism dark */
+    --glass-bg: 222 47% 8% / 0.7;
+    --glass-border: 217 33% 17% / 0.5;
+    
+    /* Shadows */
+    --shadow-glow: 226 96% 71% / 0.4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-white/50 dark:border-gray-800/50;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl shadow-lg shadow-primary/10;
+  }
+  
+  .neon-glow {
+    @apply shadow-lg shadow-primary/30;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 neon-glow transition-all duration-300 hover:scale-105;
+  }
+  
+  .page-transition {
+    @apply animate-fade-in;
+  }
+}
