@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // ⬇️ BUNU ƏLAVƏ EDİRİK
+  base: "/lynxmax/", // GitHub Pages üçün. Repo adın "lynxmax"-dırsa bu qalır.
+  
   server: {
     host: "::",
     port: 8080,
